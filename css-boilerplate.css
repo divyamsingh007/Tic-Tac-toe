@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-style: italic;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #000000;
+}
+
+.hide {
+  display: none;
+}
+
+
+.main-container {
+  height: fit-content;
+  width: 100%;
+  margin: 25px;
+  padding: 25px;
+  border-radius: 25px;
+  position: relative;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.2)
+  );
+  backdrop-filter: blur(1rem);
+}
+
+.game-container {
+  align-content: space-around;
+  justify-content: space-between;
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
+}
+
+.box {
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.2);
+  width: 18vmin;
+  height: 18vmin;
+  font-size: 8vmin;
+  background-color: #fff0dc;
+}
+
+.neon-button {
+  margin: 1vmin;
+  background-color: transparent; /* Transparent background for neon effect */
+  color: #00ffea; /* Neon text color */
+  border: 2px solid #00ffea; /* Neon border */
+  padding: 15px 40px; /* Button padding */
+  font-size: 18px; /* Text size */
+  font-weight: bold; /* Bold text */
+  border-radius: 10px; /* Rounded corners */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer; /* Pointer cursor */
+  position: relative; /* For positioning glow effects */
+  transition: background-color 0.4s, color 0.4s; /* Smooth transition */
+  overflow: hidden; /* Hide overflow for effect */
+}
+
+.neon-button::before,
+.neon-button::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100%;
+
+  height: 100%;
+
+  top: 0;
+
+  left: 0;
+
+  border-radius: inherit; /* Match button shape */
+
+  box-shadow: 0 0 10px #00ffea, /* Glowing layers */ 0 0 20px #00ffea,
+    0 0 30px #00ffea, 0 0 40px #00ffea, 0 0 50px #00ffea, 0 0 60px #00ffea,
+    0 0 70px #00ffea;
+
+  opacity: 0;
+
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+/* Glow effect on hover */
+
+.neon-button:hover::before,
+.neon-button:hover::after {
+  opacity: 1;
+
+  transform: scale(1.1); /* Slightly enlarges the glow */
+}
+
+/* Neon text glow on hover */
+
+.neon-button:hover {
+  color: #00ffea;
+
+  text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea, 0 0 15px #00ffea;
+}
+
+/* Click effect to change button background */
+
+.neon-button:active {
+  background-color: #00ffea; /* Changes background to neon color on click */
+
+  color: #111; /* Darken text color for contrast */
+
+  box-shadow: 0 0 5px #00ffea, 0 0 15px #00ffea; /* Small inner shadow */
+
+  transition: background-color 0.2s, color 0.2s;
+}
